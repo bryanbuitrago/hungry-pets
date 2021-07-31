@@ -1,7 +1,31 @@
 import React from "react";
+import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
-const PetCard = () => {
-  return <div>PetCard Component</div>;
+const PetCard = ({ name, species, birthYear, img, favFoods }) => {
+  return (
+    <div>
+      <Card style={{ width: "18rem" }}>
+        <Card.Img variant="top" src={img} />
+        <Card.Body>
+          <Card.Title>{name}</Card.Title>
+          <Card.Text>
+            {/* {favFoods.map((food) => (
+              <h3>food</h3>
+            ))} */}
+          </Card.Text>
+        </Card.Body>
+        <ListGroup className="list-group-flush">
+          <ListGroupItem>Species: {species}</ListGroupItem>
+          <ListGroupItem>Birth Year: {birthYear}</ListGroupItem>
+          <ListGroupItem>Vestibulum at eros</ListGroupItem>
+        </ListGroup>
+        <Card.Body>
+          <Card.Link href="#">Card Link</Card.Link>
+          <Card.Link href="#">Another Link</Card.Link>
+        </Card.Body>
+      </Card>
+    </div>
+  );
 };
 
 export default PetCard;
