@@ -11,12 +11,23 @@ from .pets import pets
 def getRoutes(request):
     routes = [
         '/api/pets/',
-        '/api/pets/<id>',
+        '/api/pet/<id>',
         '/api/pets/update/<id>',
         '/api/pets/delete/<id>',
     ]
     return Response(routes)
 
 
+@api_view(['GET'])
 def getPets(request):
-    return JsonResponse(pets, safe=False)
+    return Response(pets)
+
+
+@api_view(['GET'])
+def getPet(request, pk):
+    pet = None
+    for i in pets:
+        if i['birthYear'] == pk:
+            pet = i
+            break
+    return Response(pet)
