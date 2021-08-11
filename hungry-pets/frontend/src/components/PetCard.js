@@ -8,11 +8,7 @@ const PetCard = ({ name, species, birthYear, img, favFoods }) => {
         <Card.Img variant="top" src={img} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
-          <Card.Text>
-            {/* {favFoods.map((food) => (
-              <h3>food</h3>
-            ))} */}
-          </Card.Text>
+          <Card.Text>{favFoods}</Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
           <ListGroupItem>Species: {species}</ListGroupItem>
