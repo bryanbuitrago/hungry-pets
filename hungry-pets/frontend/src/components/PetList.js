@@ -12,7 +12,7 @@ const PetList = () => {
 
   useEffect(() => {
     async function fetchPets() {
-      const { data } = await axios.get("http://127.0.0.1:8000/api/pets/");
+      const { data } = await axios.get("/api/pets/");
       console.log(data);
       setPets(data);
     }
@@ -37,6 +37,7 @@ const PetList = () => {
           {pets.map((pet) => (
             <Col>
               <PetCard
+                key={pet.birthYear}
                 name={pet.name}
                 species={pet.species}
                 birthYear={pet.birthYear}
