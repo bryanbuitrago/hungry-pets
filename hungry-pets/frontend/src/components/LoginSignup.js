@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Form, Button, Container, Col } from "react-bootstrap";
 
 const LoginSignup = () => {
+    const [email, setEmail] = useState('')
   return (
     <div>
       {/* <Container> */}
       <Form>
         <Container>
           <Row>
-            <Col xs={2}>
+            <Col xs={}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="email" placeholder="Enter email" />
@@ -24,7 +25,7 @@ const LoginSignup = () => {
                 <Form.Check type="checkbox" label="Check me out" />
               </Form.Group>
             </Col>
-            <Button xs={6} variant="outline-light" type="submit">
+            <Button variant="outline-light" type="submit">
               Submit
             </Button>
           </Row>

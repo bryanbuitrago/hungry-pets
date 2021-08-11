@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
-urlpattern = [
-    path('', views.getRoutes, name="routes")
+urlpatterns = [
+    path('', views.getRoutes, name="routes"),
+    path('pets/', views.getPets, name="pets"),
 ]
