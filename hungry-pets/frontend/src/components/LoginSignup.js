@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Row, Form, Button, Container, Col } from "react-bootstrap";
 
 const LoginSignup = () => {
-    const [email, setEmail] = useState('')
+  const [email, setEmail] = useState("");
   return (
     <div>
       {/* <Container> */}
       <Form>
         <Container>
           <Row>
-            <Col xs={}>
+            <Col>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="email" placeholder="Enter email" />

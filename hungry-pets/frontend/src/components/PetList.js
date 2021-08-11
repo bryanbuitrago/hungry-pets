@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 import PetCard from "./PetCard";
+import axios from "axios";
 
-import pets from "../pets";
+// import pets from "../pets";
 
 const PetList = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [pets, setPets] = useState([]);
+
+  useEffect(() => {
+    async function fetchPets() {
+      const { data } = await axios.get("http://127.0.0.1:8000/api/pets/");
+      console.log(data);
+      setPets(data);
+    }
+    fetchPets();
+  }, []);
   return (
     <div>
       <h1>Pet List</h1>
