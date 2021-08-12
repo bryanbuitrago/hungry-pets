@@ -13,7 +13,6 @@ const PetList = () => {
   useEffect(() => {
     async function fetchPets() {
       const { data } = await axios.get("/api/pets/");
-      console.log(data);
       setPets(data);
     }
     fetchPets();
@@ -35,9 +34,8 @@ const PetList = () => {
             </Row>
           </div>
           {pets.map((pet) => (
-            <Col>
+            <Col key={pet.birthYear} sm={12} md={6} lg={4} xl={3}>
               <PetCard
-                key={pet.birthYear}
                 name={pet.name}
                 species={pet.species}
                 birthYear={pet.birthYear}

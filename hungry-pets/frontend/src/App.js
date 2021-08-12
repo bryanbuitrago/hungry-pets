@@ -1,21 +1,23 @@
 import { Container } from "react-bootstrap";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import LoginSignup from "./components/LoginSignup";
-import PetList from "./components/PetList";
+import HomePage from "./pages/HomePage";
+import PetPage from "./pages/PetPage";
 
 function App() {
   return (
-    <div>
+    <Router>
       <Header />
       <main className="py-3">
-        <LoginSignup />
-        <hr />
-        <PetList />
+        <Container>
+          <Route path="/" component={HomePage} exact />
+          <Route path="/pet/:id" component={PetPage} />
+        </Container>
       </main>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
