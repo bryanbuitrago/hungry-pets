@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 const PetCard = ({ name, species, birthYear, img, favFoods }) => {
   return (
     <div>
       <Card style={{ width: "18rem" }}>
-        <Card.Link href={`/pets/${birthYear}`}>
+        <Link to={`/pet/${birthYear}`}>
           <Card.Img variant="top" src={img} />
-        </Card.Link>
+        </Link>
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>{favFoods}</Card.Text>
